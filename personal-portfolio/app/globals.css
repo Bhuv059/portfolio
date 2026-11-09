@@ -1,0 +1,115 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f1ebe6;
+  --surface: #ffffff;
+  --foreground: #1d2839;
+  --muted: #a7a7a7;
+
+  /* Dark maroon primary buttons */
+  --primary: #641e38;
+  --primary-dark: #351020;
+
+  --secondary: #83cc95;
+  --border: #eeeae7;
+
+  /* Gradients */
+  --body-gradient: linear-gradient(135deg, #f8f3ef 0%, #eee5df 50%, #f7f1ed 100%);
+
+  --button-gradient: linear-gradient(135deg, #722b47 0%, #4b172e 55%, #32101f 100%);
+
+  --button-hover-gradient: linear-gradient(135deg, #843653 0%, #5b1d38 55%, #421529 100%);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-accent: var(--primary);
+  --color-border: var(--border);
+  --color-surface: var(--surface);
+
+  --font-sans: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  background: var(--body-gradient);
+  background-attachment: fixed;
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+::selection {
+  background: #722b47;
+  color: #ffffff;
+}
+
+/* Home section */
+.page {
+  @apply min-h-screen bg-gradient-to-br
+    from-[#f8f3ef] via-[#eee5df] to-[#f7f1ed];
+}
+
+.container {
+  @apply py-20;
+}
+
+/* Introduction */
+.label {
+  @apply mb-4 text-sm font-semibold tracking-wider text-[#641e38];
+}
+
+.title {
+  @apply max-w-3xl text-xl tracking-tight
+    text-[#1d2839] sm:text-6xl;
+}
+
+.title span {
+  @apply text-[#641e38];
+}
+
+.description {
+  @apply mt-6 max-w-2xl text-lg leading-8 text-[#888888];
+}
+
+/* Buttons */
+.actions {
+  @apply mt-8 flex flex-wrap gap-4;
+}
+
+.btn-primary {
+  @apply rounded-lg px-6 py-3 text-sm font-semibold text-white
+    bg-gradient-to-r from-[#722b47] via-[#4b172e] to-[#32101f]
+    shadow-md transition-all duration-300
+    hover:-translate-y-1
+    hover:from-[#f8f3ef] hover:via-[#eee5df] hover:to-[#f1ebe6]
+    hover:text-[#641e38] hover:shadow-lg;
+}
+
+.btn-secondary {
+  @apply rounded-lg border border-[#641e38]
+    px-6 py-3 text-sm font-semibold text-[#641e38]
+    transition-all duration-300
+    hover:-translate-y-1
+    hover:bg-gradient-to-r hover:from-[#722b47] hover:to-[#32101f]
+    hover:text-white hover:shadow-lg;
+}
