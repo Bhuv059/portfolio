@@ -1,23 +1,5 @@
-import {
-  BookOpen,
-  CodeXml,
-  Database,
-  GraduationCap,
-  Home,
-  MonitorSmartphone,
-  Rocket,
-  Search,
-  Server,
-  Wrench,
-} from "lucide-react";
+import { BookOpen, CodeXml, Database, GraduationCap, MonitorSmartphone, Rocket, Server, Wrench } from "lucide-react";
 import { InfoCardProps, SkillCard } from "./types/types";
-import App from "next/app";
-import Navbar from "./components/Navbar";
-import app from "next/app";
-import { it } from "node:test";
-import { title } from "process";
-import style from "styled-jsx/style";
-import page from "./page";
 
 export const infoCards = [
   {

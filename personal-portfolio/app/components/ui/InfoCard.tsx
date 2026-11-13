@@ -1,4 +1,4 @@
-import { InfoCardProps } from "@/app/data";
+import { InfoCardProps } from "@/app/types/types";
 
 export default function InfoCard({ icon: Icon, title, text }: InfoCardProps) {
   return (

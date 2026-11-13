@@ -1,5 +1,5 @@
 import { useId } from "react";
-import type { SkillCardGridProps } from "@/app/data";
+import type { SkillCardGridProps } from "@/app/types/types";
 
 export default function SkillCardGrid({
   title,
