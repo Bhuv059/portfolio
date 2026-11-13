@@ -1,8 +1,11 @@
 import Container from "@/app/components/ui/Container";
+import { projectCards } from "@/app/data";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <Container className="container">
+    <Container className="container" id="home">
       <p className="label">PERSONAL PORTFOLIO</p>
 
       <h1 className="title">
@@ -14,7 +17,7 @@ export default function Home() {
       </p>
 
       <div className="actions">
-        <a href="#projects" className="btn-primary">
+        <a href="/projects" className="btn-primary">
           View Projects
         </a>
 
@@ -22,6 +25,28 @@ export default function Home() {
             Contact Me
           </a> */}
       </div>
+
+      <section className="home-project-gallery-section" aria-label="Project image gallery">
+        <h2 className="home-project-gallery-title">Project Gallery</h2>
+        <div className="home-project-gallery">
+          {projectCards.map(({ projectId, title, imageSrc }) => (
+            <figure className="home-project-gallery-item" key={projectId}>
+              <Link href={`/projects#${projectId}`} aria-label={`View ${title} project details`}>
+                <Image
+                  src={imageSrc}
+                  alt={`${title} application preview`}
+                  width={1408}
+                  height={1024}
+                  className="home-project-gallery-image"
+                />
+              </Link>
+              <figcaption>
+                <Link href={`/projects#${projectId}`}>{title}</Link>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      </section>
     </Container>
   );
 }
